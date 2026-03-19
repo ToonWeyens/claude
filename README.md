@@ -6,8 +6,14 @@ Custom slash commands for Claude Code.
 
 ```bash
 git clone https://github.com/ToonWeyens/claude ~/Code/claude
+
 mkdir -p ~/.claude/commands
-ln -sf ~/Code/claude/commands/*.md ~/.claude/commands/
+mkdir -p ~/.claude/error-logs
+
+ln -sf ~/Code/claude/CLAUDE.md     ~/.claude/CLAUDE.md
+ln -sf ~/Code/claude/settings.json ~/.claude/settings.json
+ln -sf ~/Code/claude/commands      ~/.claude/commands
+ln -sf ~/Code/claude/error-logs    ~/.claude/error-logs
 ```
 
 ## Update

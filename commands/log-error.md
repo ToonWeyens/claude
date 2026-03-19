@@ -21,10 +21,10 @@ The model is the constant. The user's input is the variable. Focus on the variab
 
 ## Logs Directory
 
-All logs are stored in `.claude/error-logs/` at the project root.
+All logs are stored in `~/.claude/error-logs/` at the claude root.
 
-- Errors: `.claude/error-logs/errors/error-XXX.md`
-- Metadata (for ID tracking): `.claude/error-logs/metadata.json`
+- Errors: `~/.claude/error-logs/errors/error-XXX.md`
+- Metadata (for ID tracking): `~/.claude/error-logs/metadata.json`
 
 Before logging, ensure these directories exist. Create them if they don't. Read `metadata.json` to determine the next error ID. If `metadata.json` doesn't exist, initialize it with `{ "next_id": 1 }`.
 
@@ -50,13 +50,15 @@ Before logging, ensure these directories exist. Create them if they don't. Read 
 
 ## Log Template
 
-Write the following markdown file to `.claude/error-logs/errors/error-XXX.md` (where XXX is the zero-padded ID from metadata.json). Then increment `next_id` in `metadata.json`.
+Write the following markdown file to `~/.claude/error-logs/errors/error-XXX.md` (where XXX is the zero-padded ID from metadata.json). Then increment `next_id` in `metadata.json`.
 
 ```markdown
 # Error #[ID]: [Short Descriptive Name]
 
 **Date:** [YYYY-MM-DD]
 **Project/Context:** [What were you working on]
+**Model:** [Model used, e.g. Claude 2, Anthropic Build, etc.]
+**Directory:** [Directory where this occurred]
 
 ## What Happened
 
